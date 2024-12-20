@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}{{ ad['name'] }} - SoldIt{% endblock %}
+
+{% block content %}
+    <div class="ad-detail">
+        <h2>{{ ad['name'] }}</h2>
+
+        <div class="ad-image">
+            <img src="{{ url_for('static', filename=ad['image'].replace('static/', '')) }}" alt="{{ ad['name'] }}">
+        </div>
+
+        <div class="ad-description">
+            <p><strong>Description:</strong> {{ ad['description'] }}</p>
+        </div>
+
+        <div class="ad-price">
+            <p><strong>Price:</strong> ${{ ad['price'] }}</p>
+        </div>
+
+        <div class="ad-city">
+            <p><strong>City:</strong> {{ ad['city'] }}</p>
+        </div>
+
+        <div class="ad-category">
+            <p><strong>Category:</strong> {{ ad['category'] }}</p>
+        </div>
+
+        <div class="ad-sub-category">
+            <p><strong>Sub-Category:</strong> {{ ad['sub_category'] }}</p>
+        </div>
+
+        <a href="{{ url_for('home') }}" class="back-home">Back to Home</a>
+    </div>
+{% endblock %} 
+
+
